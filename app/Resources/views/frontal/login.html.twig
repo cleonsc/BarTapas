@@ -1,0 +1,50 @@
+{# Plantilla de nuestra Aplicacion #}
+{% extends "base.html.twig"%}
+
+{# TITULO #}
+{% block titulo %}
+    Login
+{% endblock %}
+
+{# CONTENIDO #}
+{% block contenido %}
+    <!-- Page Content -->  
+
+    <div class="container">
+        <!-- Page Heading/Breadcrumbs -->
+        <h1 class="mt-4 mb-3">Bar Paco
+            <small>Login</small>
+        </h1>
+
+        <!-- Intro Content -->
+        <div class="row">
+            <div class="col-lg-6">
+                {% if error %}
+                    <h3>{{ error.messageKey|trans(error.messageData, 'security') }}</h3>
+                {% endif %}
+                <form action="{{ path('login') }}" method="post">
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label for="username">Username:</label>
+                            <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}" />
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label for="password">Password:</label>
+                            <input class="form-control" type="password" id="password" name="_password" />
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">login</button>
+                </form>
+            </div>
+            <div class="col-lg-6">
+                <h2>¿Para que registrarse?</h2>
+                <p>Con el registro de usuario, pordrá realizar reservas para nuestro restaurante de una manera rápida y sencilla.</p>
+                <p>Mediante el ingreso del correo electrónico y la contraseña podras realizar una nueva reserva de mesa o la anulación de la esta.</p>
+                <p>Si aun no te has registrado en la aplicación, has click en el enlace de <a href="{{ path('registro') }}"><strong>REGISTRO</strong> </a></p>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{# Plantilla de nuestra Aplicacion #}
+{% extends "base.html.twig"%}
+
+{# TITULO #}
+{% block titulo %}
+    Pruebas
+{% endblock %}
+
+{# CONTENIDO #}
+{% block contenido %}
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Page Heading/Breadcrumbs -->
+        <h1 class="mt-4 mb-3">Bar de Paco
+            <small>PRUEBAS</small>
+        </h1>
+
+        {% if eventos is defined %}
+
+            {% for e in eventos %}
+                <pre>{{ e.id }}</pre>
+                <pre>{{ e.nombreEvento }}</pre>
+                <pre>{{ e.fecha }}</pre>
+                <pre>{{ e.ciudad }}</pre>
+                <pre>{{ e.poblacion }}</pre>
+            {% endfor %}
+
+        {% elseif areas is defined %}
+            {% for a in areas %}
+                <pre>{{ a.arid }}</pre>
+                <pre>{{ a.ardesc }}</pre>
+                <pre>{{ a.said }}</pre>
+            {% endfor %}
+        {% endif %}   
+    {% endblock %}

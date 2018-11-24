@@ -1,0 +1,27 @@
+{# Plantilla de nuestra Aplicacion #}
+{% extends "base.html.twig"%}
+{% form_theme form 'form/tapaForm.html.twig' %}
+{# TITULO #}
+{% block titulo %}
+    Nueva Tapa
+{% endblock %}
+
+{# CONTENIDO #}
+{% block contenido %}
+    <!-- Page Content -->
+    <div class="container">
+        <h1 class="mt-4 mb-3">Nueva Tapa</h1>
+        <!-- Portfolio Item Row -->
+        <div class="row">
+            <div class="col-md-8">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }} 
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('js/nuevaImgTapa.js') }}"></script>
+{% endblock %}

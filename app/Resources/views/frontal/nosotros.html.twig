@@ -1,0 +1,67 @@
+{# Plantilla de nuestra Aplicacion #}
+{% extends "base.html.twig"%}
+
+{# TITULO #}
+{% block titulo %}
+    Nuestro Equipo
+{% endblock %}
+
+{# CONTENIDO #}
+{% block contenido %}
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <h1 class="mt-4 mb-3">Bar de Paco
+            <small>Equipo</small>
+        </h1>
+        <!-- Image Header -->
+        <img class="img-fluid rounded mb-4" src="{{ asset ('img/bar-nosotros1.png') }}" alt="">
+        <!-- Titulo de las taretaas -->
+        <h2>Nuestro Equipo</h2>
+        <!-- Marketing Icons Section -->
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100 text-center">
+                    <img class="card-img-top" src="{{ asset ('img/chef1.png') }}" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Carlos Perez</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Director</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#">cperez@yahoo.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100 text-center">
+                    <img class="card-img-top" src="{{ asset ('img/chef2.png') }}" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Michael Wilson</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Chef</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#">mwilson@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100 text-center">
+                    <img class="card-img-top" src="{{ asset ('img/chef3.png') }}" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Chian Chinito</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Metre</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#">cchinito@hotmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fin Marketing Icons Section  -->
+    </div>
+    <!-- Fin Container -->
+{% endblock %}
