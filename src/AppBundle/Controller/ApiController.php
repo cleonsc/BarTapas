@@ -39,6 +39,8 @@ class ApiController extends Controller {
         $categorias = $repository->findAll();
 
         $response = new JsonResponse($this->catsToArray($categorias));
+        //Agregamos este heades para evadir la seguridad de CROS(Cross-Origin Resource Sharing)
+        header("Access-Control-Allow-Origin: *");
         return $response;
     }
 
@@ -56,6 +58,8 @@ class ApiController extends Controller {
             $em->flush();
 
             $response = new JsonResponse($this->catToArray($categoria));
+            //Agregamos este heades para evadir la seguridad de CROS(Cross-Origin Resource Sharing)
+            header("Access-Control-Allow-Origin: *");
             return $response;
         } else {
             throw new BadRequestHttpException("Falta nombre", null, 400);
