@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Reserva
@@ -32,6 +33,12 @@ class Reserva {
      * @var int
      *
      * @ORM\Column(name="comensales", type="integer")
+     * @Assert\Range(
+     *      min = 1,
+     *      max = 12,
+     *      minMessage = "El número mínimo de comensales es 1",
+     *      maxMessage = "El máximo de comensales son 12"
+     * )
      */
     private $comensales;
 
@@ -123,7 +130,6 @@ class Reserva {
         return $this->observaciones;
     }
 
-
     /**
      * Set usuario
      *
@@ -131,8 +137,7 @@ class Reserva {
      *
      * @return Reserva
      */
-    public function setUsuario(\AppBundle\Entity\Usuario $usuario = null)
-    {
+    public function setUsuario(\AppBundle\Entity\Usuario $usuario = null) {
         $this->usuario = $usuario;
 
         return $this;
@@ -143,8 +148,8 @@ class Reserva {
      *
      * @return \AppBundle\Entity\Usuario
      */
-    public function getUsuario()
-    {
+    public function getUsuario() {
         return $this->usuario;
     }
+
 }

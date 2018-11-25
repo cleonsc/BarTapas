@@ -17,7 +17,7 @@
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">Acciones</th>
                             <th scope="col">Fecha</th>
                             <th scope="col">Num Comensales</th>
                             <th scope="col">Observaciones</th>
@@ -26,7 +26,10 @@
                     <tbody>
                         {% for reserva in reservas%}
                         <tr>
-                            <th scope="row">{{reserva.id}}</th>
+                            <th scope="row" style="text-align:center;">
+                                <a href="{{path('nuevaReserva',{'id':reserva.id})}}" title="Editar"><i class="fas fa-edit"></i></a>
+                                <a href="#" title="Borrar" onclick="return controlBorrado('{{path('borrarReserva',{'id':reserva.id})}}','{{reserva.fecha|date('Y/m/d h:i')}}');"><i class="far fa-trash-alt"></i></a>
+                            </th>
                             <td>{{reserva.fecha|date('Y/m/d h:i')}}</td>
                             <td>{{reserva.comensales}}</td>
                             <td>{{reserva.observaciones}}</td>
@@ -39,4 +42,8 @@
         </div>
     </div>
     <!-- /.container -->
+{% endblock %}
+{% block javascripts %}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="{{asset('js/controlBorrado.js')}}"></script>
 {% endblock %}
